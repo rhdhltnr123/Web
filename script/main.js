@@ -54,4 +54,9 @@ $(function () {
     $(".btn-group a").removeClass("show");
     $(this).addClass("show");
   });
+
+  // 팝업창 버튼
+  $(".Modal button").on("click", function () {
+    $(".Modal").addClass("show");
+  });
 }); // $

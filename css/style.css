@@ -10,6 +10,10 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+}
+
 .container {
   width: 1200px;
   margin: 0 auto;
@@ -29,6 +33,7 @@ header {
   height: 100px;
   position: relative;
   z-index: 9999;
+  background: #ccc;
 }
 
 header h1 {
@@ -50,12 +55,13 @@ header nav > .depth1 > li {
   /* outline: 1px solid #333; */
   width: 7rem;
   text-align: center;
+  display: inline-block;
 }
 
 header nav > .depth1 > li > a {
   font-size: 20px;
   font-weight: bold;
-  display: block;
+  /* display: block; */
   padding: 5px;
 }
 
@@ -67,7 +73,7 @@ header nav .depth2 > li > a {
 
 /* 2단계 메뉴 안보임 */
 header nav .depth2 {
-  margin-top: 25px;
+  margin-top: 33px;
   background: #ddd;
   transition: 0.6s;
   max-height: 0;
@@ -111,11 +117,13 @@ header nav .depth2 > li > a:hover {
 /* main-contents */
 #main-contents {
   display: flex;
+  gap: 10px;
 }
 
 #main-contents > div {
   width: 33.33%;
-  outline: 2px solid red;
+  /* outline: 2px solid red; */
+  margin: 10px 0;
 }
 
 #gallery-box {
@@ -124,13 +132,14 @@ header nav .depth2 > li > a:hover {
 
 #gallery-box img {
   width: 33.33%;
-  border: 4px solid #fff;
+  border: 4px solid rgba(224, 224, 224, 0.596);
   height: 150px;
   object-fit: cover;
 }
 
 #notice-box {
-  background: #ccc;
+  background: rgba(224, 224, 224, 0.596);
+  text-align: center;
 }
 
 /* 공지사항 탭 메뉴 */
@@ -146,7 +155,8 @@ header nav .depth2 > li > a:hover {
 }
 
 #notice-box {
-  padding: 1rem;
+  padding: 17.5px;
+  height: calc(100% -35px);
 }
 
 #notice-box ul > li {
@@ -169,19 +179,65 @@ header nav .depth2 > li > a:hover {
 
 #gallery-box.show {
   display: flex;
-  margin-top: 20px;
+  padding-top: 15px;
+  background: rgba(224, 224, 224, 0.596);
 }
 
 /* 탭 버튼 스타일 */
 .btn-notice,
 .btn-gallery {
-  background: #ccc;
+  background: #fff;
+  height: 35px;
 }
 
 .btn-notice.show {
-  background: #fff;
+  background: rgba(224, 224, 224, 0.596);
 }
 
 .btn-gallery.show {
+  background: rgba(224, 224, 224, 0.596);
+}
+/* 팝업창 */
+.Modal {
+  width: 50%;
+  height: 50%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: #fff;
+  border: 1px solid #ccc;
+}
+
+.Modal h1,
+p {
+  padding: 10px;
+}
+
+.Modal button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: 1px solid #000;
+  width: 60px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 15px;
+  background: none;
+  cursor: pointer;
+}
+
+.Modal.show {
+  display: none;
+}
+
+/* footer */
+#footer {
+  height: 100px;
+  background: #ccc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
 }
