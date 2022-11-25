@@ -17,6 +17,8 @@ $(function () {
 
   // 이미지 슬라이더
   let img_num = 0; // 이미지 번호
+  let img_height = 300; // 이미지 높이값
+  let Intervaltime = 3000; // 전환주기
 
   setInterval(function () {
     img_num++; // 이미지 번호 증가
@@ -25,7 +27,8 @@ $(function () {
       img_num = 0;
     }
     $(".slider > .sliders").css({
-      transform: `translateY(${-img_num * 300}px)`,
+      // 이동값 = 이미지번호 x 이미지 높이값
+      transform: `translateY(${-img_num * img_height}px)`,
     });
-  }, 3000);
+  }, Intervaltime);
 }); // $
