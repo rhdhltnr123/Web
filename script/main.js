@@ -31,4 +31,27 @@ $(function () {
       transform: `translateY(${-img_num * img_height}px)`,
     });
   }, Intervaltime);
+
+  // 탭 UI
+  // 공지사항 버튼
+  $(".btn-group .btn-notice").on("click", function () {
+    $("#notice-box").addClass("show");
+    // 버튼 클래스 초기화
+    $("#gallery-box").removeClass("show");
+
+    // 버튼 스타일
+    $(".btn-group a").removeClass("show");
+    $(this).addClass("show");
+  });
+
+  // 갤러리 버튼
+  $(".btn-group .btn-gallery").on("click", function () {
+    $("#gallery-box").addClass("show");
+    // 버튼 클래스 초기화
+    $("#notice-box").removeClass("show");
+
+    // 버튼 스타일
+    $(".btn-group a").removeClass("show");
+    $(this).addClass("show");
+  });
 }); // $
