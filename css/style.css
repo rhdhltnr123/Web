@@ -125,8 +125,63 @@ header nav .depth2 > li > a:hover {
 #gallery-box img {
   width: 33.33%;
   border: 4px solid #fff;
+  height: 150px;
+  object-fit: cover;
 }
 
 #notice-box {
   background: #ccc;
+}
+
+/* 공지사항 탭 메뉴 */
+#main-contents .notice .btn-group > a {
+  font-size: 18px;
+  display: block;
+  /* outline: 3px solid blue; */
+  padding: 5px 15px;
+}
+
+#main-contents .notice .btn-group {
+  display: flex;
+}
+
+#notice-box {
+  padding: 1rem;
+}
+
+#notice-box ul > li {
+  margin-bottom: 5px;
+}
+
+/* 탭 콘텐츠 안보임 */
+#notice-box {
+  display: none;
+}
+
+#gallery-box {
+  display: none;
+}
+
+/* 탭 콘텐츠 보임 */
+#notice-box.show {
+  display: block;
+}
+
+#gallery-box.show {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* 탭 버튼 스타일 */
+.btn-notice,
+.btn-gallery {
+  background: #ccc;
+}
+
+.btn-notice.show {
+  background: #fff;
+}
+
+.btn-gallery.show {
+  background: #fff;
 }
