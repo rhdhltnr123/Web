@@ -47,5 +47,40 @@ header nav > .depth1 {
 
 header nav > .depth1 > li {
   outline: 1px solid #333;
-  width: 6rem;
+  width: 7rem;
+  text-align: center;
+}
+
+header nav > .depth1 > li > a {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  padding: 5px;
+}
+
+header nav .depth2 > li > a {
+  display: block;
+  padding: 8px;
+  /* background: #fff; */
+}
+
+/* 2단계 메뉴 안보임 */
+header nav .depth2 {
+  margin-top: 25px;
+  background: #ddd;
+  transition: 0.6s;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+/* 2단계 메뉴 보임 */
+header nav .depth2.show {
+  max-height: 200px;
+  opacity: 1;
+}
+
+/* 텍스트 하이라이트 효과 */
+header nav .depth1 > li > a:hover {
+  opacity: 0.7;
 }
