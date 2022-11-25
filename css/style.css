@@ -13,7 +13,7 @@
 .container {
   width: 1200px;
   margin: 0 auto;
-  outline: 1px solid #000;
+  /* outline: 1px solid #000; */
 }
 
 ul {
@@ -28,6 +28,7 @@ a {
 header {
   height: 100px;
   position: relative;
+  z-index: 9999;
 }
 
 header h1 {
@@ -46,7 +47,7 @@ header nav > .depth1 {
 }
 
 header nav > .depth1 > li {
-  outline: 1px solid #333;
+  /* outline: 1px solid #333; */
   width: 7rem;
   text-align: center;
 }
@@ -76,11 +77,33 @@ header nav .depth2 {
 
 /* 2단계 메뉴 보임 */
 header nav .depth2.show {
-  max-height: 200px;
+  max-height: 300px;
   opacity: 1;
 }
 
 /* 텍스트 하이라이트 효과 */
 header nav .depth1 > li > a:hover {
   opacity: 0.7;
+}
+
+/* 2단계 메뉴 hover */
+header nav .depth2 > li > a:hover {
+  background: pink;
+  color: #fff;
+}
+
+.slider {
+  width: 1200px;
+  height: 300px;
+  /* outline: 5px solid red; */
+  overflow: hidden;
+}
+
+.slider > .sliders {
+  /* transform: translateY(0px); */
+  transition: 1s;
+}
+
+.slider > .sliders > img {
+  display: block;
 }
